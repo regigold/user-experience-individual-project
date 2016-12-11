@@ -1,0 +1,138 @@
+// --- GENERAL STYLES --- //
+
+// HEADER //
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $offwhite;
+    padding: 20px 30px;
+    height: 80px;
+    border-bottom: 1px solid black;
+}
+
+header img {
+    height: 40px;
+    margin-right: 50px;
+}
+
+.nav-menu {
+    display: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-family: $gilroy;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .85em;
+    &:hover{
+        color: $liberal;
+    }
+}
+
+// MAIN //
+
+main {
+    display: flex;
+    background-color: $offwhite;
+}
+
+.col {
+    width: 100%;
+    height: 100vh;
+    padding: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid black;
+}
+
+.col:nth-of-type(4) {
+    border-right: none;
+}
+
+.col > button {
+    align-self: flex-end;
+    margin: 25px 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: transparent;
+    position: relative;
+    transition: .3s ease;
+}
+
+.col > button:after {
+    content: ''; 
+    position: absolute;
+    display: block;
+    background-color: black;
+    width: 16px;
+    height: 1px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.col > button:hover {
+        transform: rotate(180deg);
+    }
+
+.col-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 25px;
+}
+
+.col-header > img {
+    width: 65px;
+    align-self: center;
+    margin-bottom: 25px;
+}
+
+.col-header span {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-header h1 {
+    text-align: center;
+    font-family: $gilroy;
+    font-weight: bold;
+    text-transform: capitalize;
+    letter-spacing: .2em;
+    font-size: 1.3em; 
+}
+
+.liberal .col-header {
+    border-bottom: 1px solid $liberal;
+}
+
+.conservative .col-header {
+    border-bottom: 1px solid $conservative;
+}
+
+.green .col-header {
+    border-bottom: 1px solid $green;
+}
+
+.ndp .col-header {
+    border-bottom: 1px solid $ndp;
+}
+
