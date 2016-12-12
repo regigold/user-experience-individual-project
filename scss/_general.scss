@@ -14,7 +14,7 @@ header {
 
 header img {
     height: 40px;
-    margin-right: 50px;
+    margin-right: 100px;
 }
 
 .nav-menu {
@@ -41,8 +41,9 @@ nav a {
 
 // MAIN //
 
-main {
+.parties {
     display: flex;
+    justify-content: flex-end;
     background-color: $offwhite;
 }
 
@@ -52,14 +53,17 @@ main {
     padding: 0px 30px;
     display: flex;
     flex-direction: column;
-    border-right: 1px solid black;
+//    border-right: 1px solid black;
+    transition: .4s ease;
 }
 
 .col:nth-of-type(4) {
     border-right: none;
 }
 
-.col > button {
+// minimize buttons //
+
+.collapse-toggle {
     align-self: flex-end;
     margin: 25px 0;
     width: 28px;
@@ -71,21 +75,23 @@ main {
     transition: .3s ease;
 }
 
-.col > button:after {
+.collapse-toggle:before {
     content: ''; 
     position: absolute;
     display: block;
-    background-color: black;
     width: 16px;
-    height: 1px;
+    border-bottom: 1px solid black;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: .3s ease;
 }
 
-.col > button:hover {
-        transform: rotate(180deg);
-    }
+.collapse-toggle:hover {
+    transform: rotate(180deg);
+}
+
+// expanded party columns //
 
 .col-header {
     width: 100%;
@@ -99,16 +105,17 @@ main {
     width: 65px;
     align-self: center;
     margin-bottom: 25px;
+    transition: .3s ease;
 }
 
 .col-header span {
-    content: "";
     display: block;
     width: 100%;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: .3s ease;
 }
 
 .col-header h1 {
@@ -135,4 +142,252 @@ main {
 .ndp .col-header {
     border-bottom: 1px solid $ndp;
 }
+
+// collapsed party columns //
+
+.close-liberal {
+    border-right: none;
+    width: 100px;
+    background-color: $liberal;
+    padding: 0 15px;
+    .collapse-toggle {
+        border: 1px solid white;
+        margin: 25px auto;
+    }
+    .collapse-toggle:before {
+        border-bottom: 1px solid white;
+    }
+    .collapse-toggle:after {
+        content: ''; 
+        position: absolute;
+        display: block;
+        height: 16px;
+        border-left: 1px solid white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: .3s ease;
+    }
+    .col-header {
+        width: 60px;
+    }
+    .col-header > img {
+        width: 60px;
+    }
+    .col-header > span {
+        display: none;
+    }
+}
+
+.close-conservative {
+    border-right: none;
+    width: 100px;
+    background-color: $conservative;
+    padding: 0 15px;
+    .collapse-toggle {
+        border: 1px solid white;
+        margin: 25px auto;
+    }
+    .collapse-toggle:before {
+        border-bottom: 1px solid white;
+    }
+    .collapse-toggle:after {
+        content: ''; 
+        position: absolute;
+        display: block;
+        height: 16px;
+        border-left: 1px solid white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: .3s ease;
+    }
+    .col-header {
+        width: 60px;
+    }
+    .col-header > img {
+        width: 60px;
+    }
+    .col-header > span {
+        display: none;
+    }
+}
+
+.close-green {
+    border-right: none;
+    width: 100px;
+    background-color: $green;
+    padding: 0 15px;
+    .collapse-toggle {
+        border: 1px solid white;
+        margin: 25px auto;
+    }
+    .collapse-toggle:before {
+        border-bottom: 1px solid white;
+    }
+    .collapse-toggle:after {
+        content: ''; 
+        position: absolute;
+        display: block;
+        height: 16px;
+        border-left: 1px solid white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: .3s ease;
+    }
+    .col-header {
+        width: 60px;
+    }
+    .col-header > img {
+        width: 60px;
+    }
+    .col-header > span {
+        display: none;
+    }
+}
+
+.close-ndp {
+    border-right: none;
+    width: 100px;
+    background-color: $ndp;
+    padding: 0 15px;
+    .collapse-toggle {
+        border: 1px solid white;
+        margin: 25px auto;
+    }
+    .collapse-toggle:before {
+        border-bottom: 1px solid white;
+    }
+    .collapse-toggle:after {
+        content: ''; 
+        position: absolute;
+        display: block;
+        height: 16px;
+        border-left: 1px solid white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: .3s ease;
+    }
+    .col-header {
+        width: 60px;
+    }
+    .col-header > img {
+        width: 60px;
+    }
+    .col-header > span {
+        display: none;
+    }
+}
+
+// policy menu //
+
+.policy-menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $offwhite;
+    border-top: 1px solid black;
+    overflow: hidden;
+}
+
+.close {
+    height: 42px;
+}
+
+.open {
+    height: auto;
+    transition: height .3s ease;
+}
+
+.policy-menu > h1 {
+    margin: 15px 0;
+    font-family: $gilroy;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .85em;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.policy-menu > h1:hover {
+    color: $liberal;
+}
+
+.policies {
+    display: flex;
+//    justify-content: space-between;
+    width: 100%;
+    padding: 0 30px 30px 30px;
+}
+
+.policies article {
+    display: flex;
+    flex-direction: column;
+    padding-right: 50px;
+}
+
+.policies article > h1 {
+    font-family: $gilroy;
+    text-transform: capitalize;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.125em;
+    padding-bottom: 10px;
+}
+
+.policies article li {
+    font-family: $merriweather;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    font-size: 1em;
+    padding-bottom: 10px;
+    cursor: pointer;
+} 
+
+.policies article li:last-child {
+    padding-bottom: 0px;    
+}
+
+.policies article li:hover {
+    color: $liberal;
+}
+
+
+// FOOTER //
+
+footer {
+    height: 60px;
+    margin-bottom: 42px;
+    border-top: 1px solid black;
+    background-color: $offwhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    display:none;
+    
+}
+
+footer p {
+    font-family: $gilroy;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .7em;
+    padding: 2px 15px;
+}
+
+footer p:first-child {
+    border-right: 1px solid black;
+}
+
+
+
+
+
+
 
