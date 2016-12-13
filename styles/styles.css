@@ -187,10 +187,10 @@ nav a {
 .col-header h1 {
   text-align: center;
   font-family: Gilroy, Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-weight: bold;
+  font-weight: 800;
   text-transform: capitalize;
   letter-spacing: .2em;
-  font-size: 1.3em; }
+  font-size: 1.5em; }
 
 .liberal .col-header {
   border-bottom: 1px solid #e42427; }
@@ -230,6 +230,8 @@ nav a {
     width: 60px; }
   .close-liberal .col-header > span {
     display: none; }
+  .close-liberal .contents {
+    display: none; }
 
 .close-conservative {
   border-right: none;
@@ -256,6 +258,8 @@ nav a {
   .close-conservative .col-header > img {
     width: 60px; }
   .close-conservative .col-header > span {
+    display: none; }
+  .close-conservative .contents {
     display: none; }
 
 .close-green {
@@ -284,6 +288,8 @@ nav a {
     width: 60px; }
   .close-green .col-header > span {
     display: none; }
+  .close-green .contents {
+    display: none; }
 
 .close-ndp {
   border-right: none;
@@ -311,6 +317,8 @@ nav a {
     width: 60px; }
   .close-ndp .col-header > span {
     display: none; }
+  .close-ndp .contents {
+    display: none; }
 
 .policy-menu {
   position: fixed;
@@ -320,14 +328,16 @@ nav a {
   flex-direction: column;
   background-color: #ede8ec;
   border-top: 1px solid black;
-  overflow: hidden; }
+  overflow: hidden;
+  transition: all .3s ease; }
 
 .close {
-  height: 42px; }
+  height: 42px;
+  transition: all .3s ease; }
 
 .open {
   height: auto;
-  transition: height .3s ease; }
+  transition: all .3s ease; }
 
 .policy-menu > h1 {
   margin: 15px 0;
@@ -340,7 +350,7 @@ nav a {
   cursor: pointer; }
 
 .policy-menu > h1:hover {
-  color: #e42427; }
+  background-color: #c1bdbd; }
 
 .policies {
   display: flex;
@@ -355,7 +365,7 @@ nav a {
 .policies article > h1 {
   font-family: Gilroy, Arial, "Helvetica Neue", Helvetica, sans-serif;
   text-transform: capitalize;
-  font-weight: bold;
+  font-weight: 800;
   letter-spacing: 1px;
   font-size: 1.125em;
   padding-bottom: 10px; }
@@ -373,6 +383,24 @@ nav a {
 
 .policies article li:hover {
   color: #e42427; }
+
+.contents {
+  margin-top: 30px; }
+
+.instructions {
+  color: #c1bdbd;
+  font-family: Gilroy, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.05em;
+  line-height: 26px;
+  text-align: center; }
+
+.contents h2 {
+  font-family: Gilroy, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.25em;
+  line-height: 26px;
+  text-align: center; }
 
 footer {
   height: 60px;

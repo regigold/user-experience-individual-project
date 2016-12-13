@@ -1,6 +1,6 @@
 // --- GENERAL STYLES --- //
 
-// HEADER //
+// --- HEADER --- //
 
 header {
     display: flex;
@@ -39,7 +39,7 @@ nav a {
     }
 }
 
-// MAIN //
+// --- MAIN --- //
 
 .parties {
     display: flex;
@@ -121,10 +121,10 @@ nav a {
 .col-header h1 {
     text-align: center;
     font-family: $gilroy;
-    font-weight: bold;
+    font-weight: $bold;
     text-transform: capitalize;
     letter-spacing: .2em;
-    font-size: 1.3em; 
+    font-size: 1.5em; 
 }
 
 .liberal .col-header {
@@ -177,6 +177,9 @@ nav a {
     .col-header > span {
         display: none;
     }
+    .contents{
+        display: none;
+    }
 }
 
 .close-conservative {
@@ -209,6 +212,9 @@ nav a {
         width: 60px;
     }
     .col-header > span {
+        display: none;
+    }
+    .contents{
         display: none;
     }
 }
@@ -245,6 +251,9 @@ nav a {
     .col-header > span {
         display: none;
     }
+    .contents{
+        display: none;
+    }
 }
 
 .close-ndp {
@@ -279,6 +288,9 @@ nav a {
     .col-header > span {
         display: none;
     }
+    .contents{
+        display: none;
+    }
 }
 
 // policy menu //
@@ -292,15 +304,17 @@ nav a {
     background-color: $offwhite;
     border-top: 1px solid black;
     overflow: hidden;
+    transition: all .3s ease;
 }
 
 .close {
     height: 42px;
+    transition: all .3s ease;
 }
 
 .open {
     height: auto;
-    transition: height .3s ease;
+    transition: all .3s ease;
 }
 
 .policy-menu > h1 {
@@ -315,12 +329,11 @@ nav a {
 }
 
 .policy-menu > h1:hover {
-    color: $liberal;
+    background-color: $offwhitedark;
 }
 
 .policies {
     display: flex;
-//    justify-content: space-between;
     width: 100%;
     padding: 0 30px 30px 30px;
 }
@@ -334,7 +347,7 @@ nav a {
 .policies article > h1 {
     font-family: $gilroy;
     text-transform: capitalize;
-    font-weight: bold;
+    font-weight: $bold;
     letter-spacing: 1px;
     font-size: 1.125em;
     padding-bottom: 10px;
@@ -357,8 +370,30 @@ nav a {
     color: $liberal;
 }
 
+// party column contents //
 
-// FOOTER //
+.contents {
+    margin-top: 30px;
+}
+
+.instructions {
+    color: $offwhitedark;
+    font-family: $gilroy;
+    letter-spacing: 1px;
+    font-size: 1.05em;
+    line-height: 26px;
+    text-align: center;
+}
+
+.contents h2 {
+    font-family: $gilroy;
+    letter-spacing: 1px;
+    font-size: 1.25em;
+    line-height: 26px;
+    text-align: center;
+}
+
+// --- FOOTER --- //
 
 footer {
     height: 60px;
@@ -368,7 +403,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    //undo display:none to see footer
     display:none;
     
 }
