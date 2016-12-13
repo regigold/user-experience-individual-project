@@ -49,7 +49,7 @@ nav a {
 
 .col {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     padding: 0px 30px;
     display: flex;
     flex-direction: column;
@@ -177,6 +177,9 @@ nav a {
     .col-header > span {
         display: none;
     }
+    .instructions{
+        display: none;
+    }
     .contents{
         display: none;
     }
@@ -212,6 +215,9 @@ nav a {
         width: 60px;
     }
     .col-header > span {
+        display: none;
+    }
+    .instructions{
         display: none;
     }
     .contents{
@@ -251,6 +257,9 @@ nav a {
     .col-header > span {
         display: none;
     }
+    .instructions{
+        display: none;
+    }
     .contents{
         display: none;
     }
@@ -288,6 +297,9 @@ nav a {
     .col-header > span {
         display: none;
     }
+    .instructions{
+        display: none;
+    }
     .contents{
         display: none;
     }
@@ -318,7 +330,7 @@ nav a {
 }
 
 .policy-menu > h1 {
-    margin: 15px 0;
+    padding: 15px 0;
     font-family: $gilroy;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -350,7 +362,7 @@ nav a {
     font-weight: $bold;
     letter-spacing: 1px;
     font-size: 1.125em;
-    padding-bottom: 10px;
+    padding: 15px 0;
 }
 
 .policies article li {
@@ -373,10 +385,21 @@ nav a {
 // party column contents //
 
 .contents {
-    margin-top: 30px;
+    margin: 30px 0;
+    border-bottom: 1px solid black;
+    display: none;
 }
 
-.instructions {
+.add-content {
+    display: block;
+}
+
+.instructions-remove {
+    display: none;
+}
+
+.instructions p {
+    margin-top: 30px;
     color: $offwhitedark;
     font-family: $gilroy;
     letter-spacing: 1px;
@@ -391,22 +414,86 @@ nav a {
     font-size: 1.25em;
     line-height: 26px;
     text-align: center;
+    margin-bottom: 15px;
 }
+
+.contents p {
+    font-family: $merriweather;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    font-size: 1em;
+    line-height: 24px;
+    padding-bottom: 10px;
+}
+
+.remove {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.remove p {
+    font-family: $gilroy;
+    letter-spacing: 1px;
+    font-size: .75em;
+    text-transform: uppercase;
+    font-weight: $bold;
+    margin-right: 10px;
+}
+
+.remove-btn{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: transparent;
+    position: relative;
+    transition: .3s ease;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+
+.remove-btn:before {
+    content: ''; 
+    position: absolute;
+    display: block;
+    width: 12px;
+    border-bottom: 1px solid black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+
+.remove-btn:after {
+    content: ''; 
+    position: absolute;
+    display: block;
+    height: 12px;
+    border-left: 1px solid black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+
 
 // --- FOOTER --- //
 
 footer {
-    height: 60px;
-    margin-bottom: 42px;
+    height: 42px;
+//    height: 60px;
+//    margin-bottom: 42px;
     border-top: 1px solid black;
     background-color: $offwhite;
     display: flex;
     justify-content: center;
     align-items: center;
     //undo display:none to see footer
-    display:none;
-    
 }
+
+
 
 footer p {
     font-family: $gilroy;
