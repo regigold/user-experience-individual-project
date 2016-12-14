@@ -55,6 +55,7 @@ nav a {
     flex-direction: column;
 //    border-right: 1px solid black;
     transition: .4s ease;
+    position: relative;
 }
 
 .col:nth-of-type(4) {
@@ -124,23 +125,179 @@ nav a {
     font-weight: $bold;
     text-transform: capitalize;
     letter-spacing: .2em;
-    font-size: 1.5em; 
+    font-size: 1.875em; 
 }
 
 .liberal .col-header {
     border-bottom: 1px solid $liberal;
 }
 
+.liberal .reference {
+    border-top: 1px solid $liberal;
+}
+
 .conservative .col-header {
     border-bottom: 1px solid $conservative;
+}
+
+.conservative .reference  {
+    border-top: 1px solid $conservative;
 }
 
 .green .col-header {
     border-bottom: 1px solid $green;
 }
 
+.green .reference {
+    border-top: 1px solid $green;
+}
+
 .ndp .col-header {
     border-bottom: 1px solid $ndp;
+}
+
+.ndp .reference  {
+    border-top: 1px solid $ndp;
+}
+
+// party column contents //
+
+.contents {
+    margin: 30px 0;
+    border-bottom: 1px solid black;
+    display: none;
+}
+
+.add-content {
+    display: block;
+}
+
+.instructions-remove {
+    display: none;
+}
+
+.instructions p {
+    margin: 30px 0;
+    color: $offwhitedark;
+    font-family: $gilroy;
+    letter-spacing: 1px;
+    font-size: 1.05em;
+    line-height: 26px;
+    text-align: center;
+}
+
+.contents h2 {
+    font-family: $gilroy;
+    letter-spacing: 1px;
+    font-size: 1.125em;
+    line-height: 26px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.contents p {
+    font-family: $merriweather;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    font-size: .938em;
+    line-height: 24px;
+    padding-bottom: 10px;
+}
+
+.remove {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.remove p {
+    font-family: $gilroy;
+    letter-spacing: 1px;
+    font-size: .75em;
+    text-transform: uppercase;
+    font-weight: $bold;
+    margin-right: 10px;
+}
+
+.remove-btn{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: transparent;
+    position: relative;
+    transition: .3s ease;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+
+.remove-btn:before {
+    content: ''; 
+    position: absolute;
+    display: block;
+    width: 12px;
+    border-bottom: 1px solid black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+
+.remove-btn:after {
+    content: ''; 
+    position: absolute;
+    display: block;
+    height: 12px;
+    border-left: 1px solid black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+
+.reference {
+    width: 100%;
+}
+
+.reference h3 {
+    font-family: $gilroy;
+    letter-spacing: 1px;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 26px;
+    text-transform: capitalize;
+    margin: 10px 0 0 0;
+}
+
+.reference a {
+    font-family: $gilroy;
+    letter-spacing: 1px;
+    font-size: 1em;
+    line-height: 26px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 2px; 
+    &:hover {
+        font-weight: bold;
+    }
+}
+
+.liberal .reference a {
+    color: $liberal;
+}
+
+.conservative .reference a {
+    color: $conservative;
+}
+
+.green .reference a {
+    color: $green;
+}
+
+.ndp .reference a {
+    color: $ndp;
 }
 
 // collapsed party columns //
@@ -181,6 +338,9 @@ nav a {
         display: none;
     }
     .contents{
+        display: none;
+    }
+    .reference{
         display: none;
     }
 }
@@ -263,6 +423,9 @@ nav a {
     .contents{
         display: none;
     }
+    .reference{
+        display: none;
+    }
 }
 
 .close-ndp {
@@ -303,6 +466,9 @@ nav a {
     .contents{
         display: none;
     }
+    .reference{
+        display: none;
+    }
 }
 
 // policy menu //
@@ -325,17 +491,19 @@ nav a {
 }
 
 .open {
-    height: auto;
+    height: 372px;
     transition: all .3s ease;
 }
 
 .policy-menu > h1 {
-    padding: 15px 0;
+    display: inline-block;
     font-family: $gilroy;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: .85em;
     width: 100%;
+    height:43px;
+    line-height: 43px;
     text-align: center;
     cursor: pointer;
 }
@@ -366,12 +534,14 @@ nav a {
 }
 
 .policies article li {
-    font-family: $merriweather;
-    font-weight: lighter;
+    font-family: $gilroy;
+//    font-family: $merriweather;
+//    font-weight: lighter;
     letter-spacing: 1px;
     font-size: 1em;
     padding-bottom: 10px;
     cursor: pointer;
+    text-transform: uppercase;
 } 
 
 .policies article li:last-child {
@@ -381,103 +551,6 @@ nav a {
 .policies article li:hover {
     color: $liberal;
 }
-
-// party column contents //
-
-.contents {
-    margin: 30px 0;
-    border-bottom: 1px solid black;
-    display: none;
-}
-
-.add-content {
-    display: block;
-}
-
-.instructions-remove {
-    display: none;
-}
-
-.instructions p {
-    margin-top: 30px;
-    color: $offwhitedark;
-    font-family: $gilroy;
-    letter-spacing: 1px;
-    font-size: 1.05em;
-    line-height: 26px;
-    text-align: center;
-}
-
-.contents h2 {
-    font-family: $gilroy;
-    letter-spacing: 1px;
-    font-size: 1.25em;
-    line-height: 26px;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.contents p {
-    font-family: $merriweather;
-    font-weight: lighter;
-    letter-spacing: 1px;
-    font-size: 1em;
-    line-height: 24px;
-    padding-bottom: 10px;
-}
-
-.remove {
-    display: flex;
-    justify-content: flex-end;
-    cursor: pointer;
-}
-
-.remove p {
-    font-family: $gilroy;
-    letter-spacing: 1px;
-    font-size: .75em;
-    text-transform: uppercase;
-    font-weight: $bold;
-    margin-right: 10px;
-}
-
-.remove-btn{
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    border: 1px solid black;
-    background-color: transparent;
-    position: relative;
-    transition: .3s ease;
-    transform: rotate(45deg);
-    cursor: pointer;
-}
-
-
-.remove-btn:before {
-    content: ''; 
-    position: absolute;
-    display: block;
-    width: 12px;
-    border-bottom: 1px solid black;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: .3s ease;
-}
-
-.remove-btn:after {
-    content: ''; 
-    position: absolute;
-    display: block;
-    height: 12px;
-    border-left: 1px solid black;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: .3s ease;
-}
-
 
 // --- FOOTER --- //
 
@@ -490,10 +563,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    //undo display:none to see footer
 }
-
-
 
 footer p {
     font-family: $gilroy;
